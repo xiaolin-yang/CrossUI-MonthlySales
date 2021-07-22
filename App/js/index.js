@@ -8,8 +8,8 @@ xui.Class('App', 'xui.Module',{
                 xui.create("xui.UI.Panel")
                 .setHost(host,"ctl_panel3")
                 .setDock("none")
-                .setLeft("5.833333333333333em")
-                .setTop("0.8333333333333334em")
+                .setLeft("7.619047619047619em")
+                .setTop("0.7619047619047619em")
                 .setWidth("45em")
                 .setHeight("49.166666666666664em")
                 .setCaption("Monthly Sales Summary")
@@ -23,76 +23,76 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("3em")
                 .setBottom("18.5em")
                 .setZIndex(1002)
-                );
+            );
             
             host.ctl_panel3.append(
                 xui.create("xui.UI.FusionChartsXT")
                 .setHost(host,"ctl_fusionchartsxt1")
                 .setDock("fill")
-                .setWidth("44em")
-                .setHeight("27.166666666666668em")
+                .setWidth("44.114285714285714em")
+                .setHeight("27.2em")
                 .setChartType("Pie2D")
                 .setJSONData({
-                    "chart":{
-                        "caption":"Monthly Sales Summary",
-                        "subcaption":"For the year 2006",
-                        "xaxisname":"Month",
-                        "yaxisname":"Sales",
-                        "logoScale":"50",
-                        "logoURL":"http://www.crossui.com/img/logo.png",
-                        "numberprefix":"$",
-                        "useroundedges":"1",
-                        "bgcolor":"FFFFFF,FFFFFF",
-                        "showborder":"0",
-                        "placevaluesinside":"1",
-                        "enablerotation":"0",
-                        "animation":"0"
+                    "chart" : {
+                        "caption" : "Monthly Sales Summary",
+                        "subcaption" : "For the year 2006",
+                        "xaxisname" : "Month",
+                        "yaxisname" : "Sales",
+                        "logoScale" : "50",
+                        "logoURL" : "http://www.crossui.com/img/logo.png",
+                        "numberprefix" : "$",
+                        "useroundedges" : "1",
+                        "bgcolor" : "FFFFFF,FFFFFF",
+                        "showborder" : "0",
+                        "placevaluesinside" : "1",
+                        "enablerotation" : "0",
+                        "animation" : "0"
                     },
-                    "data":[
+                    "data" : [
                         {
-                            "label":"January",
-                            "value":"17400"
+                            "label" : "January",
+                            "value" : "17400"
                         },
                         {
-                            "label":"February",
-                            "value":"19800"
+                            "label" : "February",
+                            "value" : "19800"
                         },
                         {
-                            "label":"March",
-                            "value":"21800"
+                            "label" : "March",
+                            "value" : "21800"
                         },
                         {
-                            "label":"April",
-                            "value":"23800"
+                            "label" : "April",
+                            "value" : "23800"
                         },
                         {
-                            "label":"May",
-                            "value":"29600"
+                            "label" : "May",
+                            "value" : "29600"
                         },
                         {
-                            "label":"June",
-                            "value":"27600"
+                            "label" : "June",
+                            "value" : "27600"
                         }
                     ],
-                    "styles":{
-                        "definition":[
+                    "styles" : {
+                        "definition" : [
                             {
-                                "name":"CanvasAnim",
-                                "type":"animation",
-                                "param":"_xScale",
-                                "start":"0",
-                                "duration":"1"
+                                "name" : "CanvasAnim",
+                                "type" : "animation",
+                                "param" : "_xScale",
+                                "start" : "0",
+                                "duration" : "1"
                             }
                         ],
-                        "application":[
+                        "application" : [
                             {
-                                "toobject":"Canvas",
-                                "styles":"CanvasAnim"
+                                "toobject" : "Canvas",
+                                "styles" : "CanvasAnim"
                             }
                         ]
                     }
                 })
-                );
+            );
             
             host.ctl_panel3.append(
                 xui.create("xui.UI.Block")
@@ -100,7 +100,7 @@ xui.Class('App', 'xui.Module',{
                 .setDock("bottom")
                 .setHeight("18.583333333333332em")
                 .setOverflow("hidden")
-                );
+            );
             
             host.ctl_block7.append(
                 xui.create("xui.UI.Panel")
@@ -108,49 +108,48 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("25em")
                 .setTop("6.666666666666667em")
                 .setCaption("Data Source")
-                );
+            );
             
             host.xui_ui_panel27.append(
                 xui.create("xui.UI.TreeGrid")
                 .setHost(host,"xui_ui_treegrid24")
-                .setDirtyMark(false)
                 .setLeft("0em")
                 .setTop("0em")
                 .setEditable(true)
                 .setRowHandler(false)
                 .setHeader([
                     {
-                        "id":"label",
-                        "caption":"Month",
-                        "type":"input",
-                        "flexSize":true,
-                        "width":"8em"
+                        "id" : "label",
+                        "caption" : "Month",
+                        "type" : "input",
+                        "flexSize" : true,
+                        "width" : "8em"
                     },
                     {
-                        "id":"value",
-                        "caption":"Sales",
-                        "type":"currency",
-                        "flexSize":true,
-                        "width":"16em"
+                        "id" : "value",
+                        "caption" : "Sales",
+                        "type" : "currency",
+                        "flexSize" : true,
+                        "width" : "16em"
                     }
                 ])
                 .setTreeMode("none")
                 .afterCellUpdated([
                     {
-                        "desc":"Action 1",
-                        "type":"control",
-                        "target":"ctl_fusionchartsxt1",
-                        "args":[
+                        "desc" : "Action 1",
+                        "type" : "control",
+                        "target" : "ctl_fusionchartsxt1",
+                        "args" : [
                             "{page.ctl_fusionchartsxt1.fillData()}",
                             undefined,
                             undefined,
                             "{page.xui_ui_treegrid24.getRawData()}"
                         ],
-                        "method":"fillData",
-                        "redirection":"other:callback:call"
+                        "method" : "fillData",
+                        "redirection" : "other:callback:call"
                     }
                 ])
-                );
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio
